@@ -14,8 +14,8 @@ public class AccountTest extends BaseTest {
         _2_HomePage.signinLink();
 
         // Step 2: Enter username/phone
-        _3_LoginPage.setUsername("+201096933795");
-        _3_LoginPage.signinButton();
+        _3_1_LoginPage.setUsername("+201096933795");
+        _3_1_LoginPage.signinButton();
 
         // Step 3: Enter password
         _4_ContinuePage.setPassword("aA1!testest00");

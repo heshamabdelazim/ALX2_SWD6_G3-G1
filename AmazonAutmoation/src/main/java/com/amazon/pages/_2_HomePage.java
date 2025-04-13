@@ -17,9 +17,9 @@ public class _2_HomePage extends _1_BasePage {
         return driver.findElement(accountLink).isDisplayed();
     }
 
-    public static _3_LoginPage signinLink() {
+    public static _3_1_LoginPage signinLink() {
         _1_BasePage.click(signinLink);
-        return new _3_LoginPage();
+        return new _3_1_LoginPage();
     }
 
     public static void setSearch(String search){

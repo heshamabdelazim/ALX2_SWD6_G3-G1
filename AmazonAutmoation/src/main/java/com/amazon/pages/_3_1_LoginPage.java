@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class _3_LoginPage extends _1_BasePage {
+public class _3_1_LoginPage extends _1_BasePage {
 
     private static By usernameField = By.id("ap_email_login");
     private static By continueButton = By.id("continue");
