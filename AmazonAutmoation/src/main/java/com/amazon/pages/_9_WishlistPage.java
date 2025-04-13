@@ -12,8 +12,8 @@ public class _9_WishlistPage extends _1_BasePage {
     public static By yourListConfirm = By.xpath("//a[@href='/-/en/hz/wishlist/ls/ref=cm_wl_your_lists']");
     public static By deleteButton = By.xpath("//input[@name='submit.deleteItem']");
     public static By deleteConfirm = By.xpath("//div[contains(text(),'Deleted')]");
-    public static By undoDeleteLink = By.xpath("//a[@id='itemUndoLink_B0DGJ2FB85']");
-    public static By productTitle = By.xpath("//a[@id='itemName_I2PNZ7G464F6NX']");
+    public static By undoDeleteLink = By.xpath("(//a[normalize-space()='Undo'])[1]");
+    public static By productTitle = By.xpath("(//a[normalize-space()='Men Classic Shirt from White Eagle'])[1]");
 
     public static boolean isWishlistPageVisible() {
         return driver.findElement(yourListConfirm).isDisplayed();

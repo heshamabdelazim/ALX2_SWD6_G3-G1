@@ -12,7 +12,7 @@ public class LoginTests extends BaseTest {
     @Test
     public void testLoginPage() {
         // Step 1: Click Sign-in
-        HomePage.signinLink(); //this return new loginpage()
+        _2_HomePage.signinLink(); //this return new loginpage()
 
         // Step 2: Enter username/phone
         _3_LoginPage.setUsername("+201096933795");

@@ -14,7 +14,7 @@ public class _1_AddToWishlist extends BaseTest {
         // Pre-requirement product isn't in wishlist already
 
         // Step 1: Click Sign-in
-        HomePage.signinLink();
+        _2_HomePage.signinLink();
 
         // Step 2: Enter username/phone
         _3_LoginPage.setUsername("+201096933795");
@@ -28,7 +28,7 @@ public class _1_AddToWishlist extends BaseTest {
         Assert.assertTrue(_2_HomePage.isAccountLinkVisible(), "Login failed: Account link not visible.");
 
         // Step 5: Set search product
-        _2_HomePage.setSearch("iphone16 pro max");
+        _2_HomePage.setSearch("Men Classic Shirt from White Eagle");
 
         // Step 6: Click search
         _2_HomePage.openProductsListing();

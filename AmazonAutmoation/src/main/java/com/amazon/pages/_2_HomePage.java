@@ -7,7 +7,7 @@ import java.time.Duration;
 
 public class _2_HomePage extends _1_BasePage {
 
-    private By signinLink = By.id("nav-link-accountList-nav-line-1");
+    private static By signinLink = By.id("nav-link-accountList-nav-line-1");
     public static By accountLink = By.id("nav-link-accountList");
     public static By searchField = By.id("twotabsearchtextbox");
     public static By searchButton = By.id("nav-search-submit-button");
@@ -17,8 +17,8 @@ public class _2_HomePage extends _1_BasePage {
         return driver.findElement(accountLink).isDisplayed();
     }
 
-    public _3_LoginPage signinLink() {
-        click(signinLink);
+    public static _3_LoginPage signinLink() {
+        _1_BasePage.click(signinLink);
         return new _3_LoginPage();
     }
 

@@ -11,7 +11,7 @@ public class _2_OpenWishlist extends BaseTest {
     public void testOpenWishlist() {
 
         // Step 1: Click Sign-in
-        HomePage.signinLink();
+        _2_HomePage.signinLink();
 
         // Step 2: Enter username/phone
         _3_LoginPage.setUsername("+201096933795");

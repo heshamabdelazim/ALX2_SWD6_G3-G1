@@ -8,7 +8,7 @@ public class _1_BasePage {
 
     public static WebDriver driver;
 
-    public void setDriver(WebDriver driver){
+    public static void setDriver(WebDriver driver){
         _1_BasePage.driver = driver;
     }
 

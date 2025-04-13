@@ -11,7 +11,7 @@ public class _4_RemoveProductFromList extends BaseTest {
     public void testRemoveProductFromList() {
 
         // Step 1: Click Sign-in
-        HomePage.signinLink();
+        _2_HomePage.signinLink();
 
         // Step 2: Enter username/phone
         _3_LoginPage.setUsername("+201096933795");

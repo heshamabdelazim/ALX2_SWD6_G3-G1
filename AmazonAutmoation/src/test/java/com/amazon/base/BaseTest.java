@@ -13,8 +13,6 @@ public class BaseTest {
     //important in Before/after Class
 
     protected WebDriver driver;
-    protected _1_BasePage BasePage;
-    protected _2_HomePage HomePage;
     private String url = "https://www.amazon.eg/?language=en_AE";
 
     @BeforeClass
@@ -22,9 +20,7 @@ public class BaseTest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(url); //open the driver to this URL
-        BasePage = new _1_BasePage();
-        BasePage.setDriver(driver);
-        HomePage = new _2_HomePage();
+        _1_BasePage.setDriver(driver);
     }
 
     @AfterClass
