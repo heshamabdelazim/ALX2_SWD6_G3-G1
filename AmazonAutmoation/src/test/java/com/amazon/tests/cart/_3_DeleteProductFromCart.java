@@ -3,7 +3,7 @@ package com.amazon.tests.cart;
 import com.amazon.base.BaseTest;
 import com.amazon.pages._11_CartPage;
 import com.amazon.pages._2_HomePage;
-import com.amazon.pages._3_LoginPage;
+import com.amazon.pages._3_1_LoginPage;
 import com.amazon.pages._4_ContinuePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -17,8 +17,8 @@ public class _3_DeleteProductFromCart extends BaseTest {
         _2_HomePage.signinLink();
 
         // Step 2: Enter username/phone
-        _3_LoginPage.setUsername("+201096933795");
-        _3_LoginPage.signinButton();
+        _3_1_LoginPage.setUsername("+201096933795");
+        _3_1_LoginPage.signinButton();
 
         // Step 3: Enter password
         _4_ContinuePage.setPassword("aA1!testest00");
