@@ -24,7 +24,7 @@ public class _2_HomePage extends _1_BasePage {
         return new _3_1_LoginPage();
     }
 
-    public static void setSearch(String search){
+    public static void setSearch(String search) {
         set(searchField, search);
     }
 
@@ -51,12 +51,12 @@ public class _2_HomePage extends _1_BasePage {
         return new _11_CartPage();
 
     }
-}
 
-public static _13_LanguagePage openLanguagePage() {
-    click(LanguageButton);
-    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("")));
-    return new _13_LanguagePage();
+    public static _13_LanguagePage openLanguagePage() {
+        click(LanguageButton);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h3[normalize-space()='Language Settings'])[1]")));
+        return new _13_LanguagePage();
 
+    }
 }

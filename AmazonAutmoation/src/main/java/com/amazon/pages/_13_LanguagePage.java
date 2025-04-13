@@ -5,12 +5,19 @@ import org.openqa.selenium.By;
 
 public class _13_LanguagePage extends _1_BasePage {
 
-    public static By checkoutTitle = By.xpath("(//a[normalize-space()='Secure checkout'])[1]");
+    public static By languageTitle = By.xpath("(//h3[normalize-space()='Language Settings'])[1]");
+    public static By arabicRadiobutton = By.xpath("(//i[@class='a-icon a-icon-radio'])[1]");
+    public static By submitButton = By.xpath("(//input[@class='a-button-input'])[1]");
 
     public static boolean isCartVisible() {
-        return driver.findElement(checkoutTitle).isDisplayed();
+        return driver.findElement(languageTitle).isDisplayed();
     }
 
+    public static void clickArabicRadioButton(){
+        click(arabicRadiobutton);
+    }
 
-
+    public static void clickSubmitButton(){
+        click(submitButton);
+    }
 }
