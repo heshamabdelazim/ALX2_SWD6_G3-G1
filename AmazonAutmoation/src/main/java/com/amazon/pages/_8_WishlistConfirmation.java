@@ -9,7 +9,7 @@ import java.time.Duration;
 
 public class _8_WishlistConfirmation extends _1_BasePage {
 
-    public static By addConfirmation = By.xpath("//span[normalize-space()='1 item added to']");
+    public static By addConfirmation = By.xpath("(//span[normalize-space()='1 item added to'])[1]");
     public static By viewList = By.xpath("//a[normalize-space()='View your list']");
 
     public static boolean isProductAdded() {
