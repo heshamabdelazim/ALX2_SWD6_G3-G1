@@ -10,7 +10,6 @@ public class _6_ProductsListingPage extends _1_BasePage {
 
     public static By searchResults = By.xpath("(//span[@class='a-dropdown-prompt'])[1]");
     public static By searchProduct = By.xpath("//span[normalize-space()='Men Classic Shirt from White Eagle']");
-    public static By addToList = By.xpath("//input[@id='add-to-wishlist-button-submit']");
 
     public static boolean isPLPVisible() {
         return driver.findElement(searchResults).isDisplayed();

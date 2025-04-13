@@ -15,4 +15,10 @@
             <class name="com.amazon.tests.cart._3_DeleteProductFromCart"/>
         </classes>
     </test>
+    <test name="Header and Footer">
+        <classes>
+            <class name="com.amazon.tests.header._1_ChangeLanguage"/>
+            <class name="com.amazon.tests.footer._1_ChangeStore"/>
+        </classes>
+    </test>
 </suite>

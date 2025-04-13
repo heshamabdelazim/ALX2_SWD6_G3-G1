@@ -9,7 +9,7 @@ public class _13_LanguagePage extends _1_BasePage {
     public static By arabicRadiobutton = By.xpath("(//i[@class='a-icon a-icon-radio'])[1]");
     public static By submitButton = By.xpath("(//input[@class='a-button-input'])[1]");
 
-    public static boolean isCartVisible() {
+    public static boolean isLanguagePageVisible() {
         return driver.findElement(languageTitle).isDisplayed();
     }
 
