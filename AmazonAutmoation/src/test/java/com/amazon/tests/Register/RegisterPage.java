@@ -8,18 +8,17 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class RegisterPage extends BaseTest {
-    private String mailBody="depi.selenium";
-    private String mail_To_Register = mailBody+"@qa.team"; //depi.selenium@qa.team
 
-    static String url= _1_BasePage.getUrl("qa");
 
-    @BeforeClass
-    public static void setUp(){
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get(url); //open the driver to this URL
-        _1_BasePage.setDriver(driver);
-    }
+//    static String url= _1_BasePage.getUrl("qa");
+//
+//    @BeforeClass
+//    public static void setUp(){
+//        driver = new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.get(url); //open the driver to this URL
+//        _1_BasePage.setDriver(driver);
+//    }
     @Test
     public void userRegsiter(){
         _3_2_RegisterPage.startQA();

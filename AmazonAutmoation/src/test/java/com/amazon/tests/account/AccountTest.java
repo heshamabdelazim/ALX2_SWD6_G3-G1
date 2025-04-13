@@ -1,18 +1,22 @@
 package com.amazon.tests.account;
 
 import com.amazon.base.BaseTest;
+import com.amazon.data.DataBase;
 import com.amazon.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AccountTest extends BaseTest {
 
+
     @Test
     public void testOpenAccountPage() {
 
         // Step 1: Click Sign-in
         _2_HomePage.signinLink();
-
+//System.out.print(DataBase.startDataBase().x); //should be 3
+//        DataBase.startDataBase().x=6;
+//System.out.print(DataBase.startDataBase().x); //should be 6
         // Step 2: Enter username/phone
         _3_1_LoginPage.setUsername("+201096933795");
         _3_1_LoginPage.signinButton();
@@ -32,6 +36,17 @@ public class AccountTest extends BaseTest {
 
 
 
+    }
+    public static void main(String[] args){
+        DataBase first = DataBase.startDataBase();
+        System.out.println(first.x);//2
+        first.x=5;
+        System.out.println(first.x);//5
+        //second connection with database
+        DataBase sec= DataBase.startDataBase();
+        System.out.println(sec.x); //5
+        System.out.println(first.x); //5
+        if(first==sec)System.out.println(first==sec);
     }
 }
 

@@ -12,9 +12,13 @@ import java.util.concurrent.TimeUnit;
 public class BaseTest {
     //important in Before/after Class
 
-    protected static WebDriver driver;
-    public static String url = _1_BasePage.getUrl("any");
+    //
+    private String mailBody="depi.selenium";
+    private String mail_To_Register = mailBody+"@qa.team"; //depi.selenium@qa.team
 
+    protected static WebDriver driver;
+//    public static String url = _1_BasePage.getUrl("any");
+    private static String url = "https://www.amazon.eg/?language=en_AE";
 
     @BeforeClass
     public static void setUp(){
