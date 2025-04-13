@@ -10,10 +10,12 @@ public class _7_ProductDetailPage extends _1_BasePage {
 
     public static By confirmPDP = By.xpath("//span[@id='productTitle']");
     public static By addToList = By.xpath("//input[@id='add-to-wishlist-button-submit']");
+    public static By addToCart = By.xpath("(//input[@id='add-to-cart-button'])[1]");
 
     public static boolean isPDPVisible() {
         return driver.findElement(confirmPDP).isDisplayed();
     }
+
 
 
     public static _8_WishlistConfirmation openWishConfirmation() {
@@ -21,6 +23,14 @@ public class _7_ProductDetailPage extends _1_BasePage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[normalize-space()='View your list']")));
         return new _8_WishlistConfirmation();
+
+    }
+
+    public static _10_AddToCartPage openAddToCartPage() {
+        click(addToCart);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h1[normalize-space()='Added to cart'])[1]")));
+        return new _10_AddToCartPage();
 
     }
 }

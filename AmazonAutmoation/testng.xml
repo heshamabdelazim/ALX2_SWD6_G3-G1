@@ -1,11 +1,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Amazon Test Suite" parallel="false">
-    <test name="Login and Checkout Tests">
+    <test name="Wishlist">
         <classes>
             <class name="com.amazon.tests.wishlist._1_AddToWishlist"/>
             <class name="com.amazon.tests.wishlist._2_OpenWishlist"/>
             <class name="com.amazon.tests.wishlist._3_UndoRemoveProductFromList"/>
             <class name="com.amazon.tests.wishlist._4_RemoveProductFromList"/>
+        </classes>
+    </test>
+    <test name="Cart">
+        <classes>
+            <class name="com.amazon.tests.cart._1_AddToCart"/>
+            <class name="com.amazon.tests.cart._2_OpenCart"/>
+            <class name="com.amazon.tests.cart._3_DeleteProductFromCart"/>
         </classes>
     </test>
 </suite>

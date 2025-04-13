@@ -9,13 +9,13 @@ import java.time.Duration;
 
 public class _10_AddToCartPage extends _1_BasePage {
 
-    public static By addedToCart = By.xpath("(//h1[normalize-space()='Added to cart'])[1]");
+
     public static By goToCart = By.xpath("(//a[@href='/-/en/cart?ref_=sw_gtc'])[1]");
+    public static By addedToCart = By.xpath("(//h1[normalize-space()='Added to cart'])[1]");
 
     public static boolean isAddtoCartVisible() {
         return driver.findElement(addedToCart).isDisplayed();
     }
-
 
     public static _11_CartPage openCartPage() {
         click(goToCart);

@@ -11,11 +11,15 @@ public class _11_CartPage extends _1_BasePage {
 
     public static By shoppingCartTitle = By.xpath("(//h2[normalize-space()='Shopping Cart'])[1]");
     public static By proceedToBuy = By.xpath("(//input[@name='proceedToRetailCheckout'])[1]");
+    public static By trashIcon = By.xpath("//span[@class='a-icon a-icon-small-trash']");
 
     public static boolean isCartVisible() {
         return driver.findElement(shoppingCartTitle).isDisplayed();
     }
 
+    public static void deleteProduct() {
+        click(trashIcon);
+    }
 
     public static _12_Checkout openCheckoutPage() {
         click(proceedToBuy);
