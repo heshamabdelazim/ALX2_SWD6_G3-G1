@@ -15,15 +15,22 @@ public class _1_ChangeLanguage extends BaseTest {
 
         // Step 1: Click Language Link
         _2_HomePage.openLanguagePage();
+        wait(2);
+
+        // Confirm Language Page opened
+        Assert.assertTrue(_13_LanguagePage.isLanguagePageVisible(),"Language Page not visible");
 
         // Step 2: Choose Arabic Language button
         _13_LanguagePage.clickArabicRadioButton();
+        wait(2);
 
         // Step 3: Click submit button
         _13_LanguagePage.clickSubmitButton();
+        wait(2);
 
         // Step 4: Confirm login success
-        Assert.assertTrue(_2_HomePage.isAccountLinkVisible(), "Homepage is not visible");
+        Assert.assertTrue(_2_HomePage.isArabicCartTitleVisible(), "Language is not arabic");
+        wait(1);
 
     }
 }

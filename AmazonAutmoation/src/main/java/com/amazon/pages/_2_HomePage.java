@@ -11,13 +11,18 @@ public class _2_HomePage extends _1_BasePage {
     public static By accountLink = By.id("nav-link-accountList");
     public static By searchField = By.id("twotabsearchtextbox");
     public static By searchButton = By.id("nav-search-submit-button");
-    public static By accountPage = By.xpath("//a[@href='https://www.amazon.eg/-/en/gp/css/homepage.html?ref_=nav_youraccount_btn']");
+    public static By accountPage = By.xpath("//span[normalize-space()='Account & Lists']");
     public static By cartLocator = By.xpath("//span[@id='nav-cart-count']");
     public static By languageButton = By.xpath("(//div[contains(text(),'EN')])[1]");
     public static By countryButton = By.xpath("(//span[@class='icp-color-base'][normalize-space()='Egypt'])[1]");
+    public static By arabicCartTitle = By.xpath("(//span[contains(text(),'عربة التسوق')])[1]");
 
     public static boolean isAccountLinkVisible() {
         return driver.findElement(accountLink).isDisplayed();
+    }
+
+    public static boolean isArabicCartTitleVisible() {
+        return driver.findElement(arabicCartTitle).isDisplayed();
     }
 
     public static _3_1_LoginPage signinLink() {

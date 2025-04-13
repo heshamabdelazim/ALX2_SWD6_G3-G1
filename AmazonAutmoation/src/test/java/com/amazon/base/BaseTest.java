@@ -25,17 +25,21 @@ public class BaseTest {
 
     @AfterClass
     public void tearDown() {
-        try {
-            // Wait for a few seconds before closing
-            TimeUnit.SECONDS.sleep(3);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        wait(3);
 
         // Then quit the browser
         if (driver != null) {
             driver.quit();
         }
 
+    }
+
+    public void wait(int x){
+        try {
+            // Wait for a few seconds before closing
+            TimeUnit.SECONDS.sleep(x);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

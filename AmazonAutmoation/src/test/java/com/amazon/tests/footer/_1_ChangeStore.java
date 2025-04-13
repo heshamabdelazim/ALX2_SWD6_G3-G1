@@ -12,15 +12,22 @@ public class _1_ChangeStore extends BaseTest {
 
         // Step 1: Click Country Link
         _2_HomePage.openCountryPage();
+        wait(2);
+
+        // Confirm Country Page
+        Assert.assertTrue(_14_CountryPage.isCountryPageVisible(), "Country page is not visible");
 
         // Step 2: Click Country Dropdown Button
         _14_CountryPage.clickCountryButton();
+        wait(2);
 
         // Step 3: Choose Canada Country
         _14_CountryPage.clickCanadaCountry();
+        wait(2);
 
         // Step 4: Confirm Submit Button
         _14_CountryPage.clickSubmitButton();
+        wait(2);
 
     }
 }

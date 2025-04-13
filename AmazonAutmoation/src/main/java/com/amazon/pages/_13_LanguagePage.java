@@ -1,6 +1,10 @@
 package com.amazon.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 public class _13_LanguagePage extends _1_BasePage {
@@ -15,9 +19,13 @@ public class _13_LanguagePage extends _1_BasePage {
 
     public static void clickArabicRadioButton(){
         click(arabicRadiobutton);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h3[contains(text(),'إعدادات اللغة')])[1]")));
     }
 
     public static void clickSubmitButton(){
         click(submitButton);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[contains(text(),'عربة التسوق')])[1]")));
     }
 }
