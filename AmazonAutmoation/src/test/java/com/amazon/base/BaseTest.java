@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeClass;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
+    //important in Before/after Class
 
     protected WebDriver driver;
     protected _1_BasePage BasePage;
@@ -20,7 +21,7 @@ public class BaseTest {
     public void setUp(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(url);
+        driver.get(url); //open the driver to this URL
         BasePage = new _1_BasePage();
         BasePage.setDriver(driver);
         HomePage = new _2_HomePage();

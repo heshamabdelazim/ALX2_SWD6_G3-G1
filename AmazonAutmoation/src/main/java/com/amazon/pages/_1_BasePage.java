@@ -24,5 +24,4 @@ public class _1_BasePage {
     protected static void click(By locator){
         find(locator).click();
     }
-
 }
