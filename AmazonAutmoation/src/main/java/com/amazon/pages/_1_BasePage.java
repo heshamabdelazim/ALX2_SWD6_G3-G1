@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import java.util.concurrent.TimeUnit;
 
 public class _1_BasePage {
+    private String url;
 
     public static WebDriver driver;
 
@@ -27,6 +28,12 @@ public class _1_BasePage {
         find(locator).click();
     }
 
+    public static String getUrl(String q){
+        if(q.equals("qa")){
+            return "qa.team";
+        }
+        return "https://www.amazon.eg/?language=en_AE";
+    }
 
     public void wait(int x) {
         try {
