@@ -13,7 +13,7 @@ public class BaseTest {
     //important in Before/after Class
 
     protected WebDriver driver;
-    private String url = "https://www.amazon.eg/?language=en_AE";
+    public String url = "https://www.amazon.eg/?language=en_AE";
 
     @BeforeClass
     public void setUp(){

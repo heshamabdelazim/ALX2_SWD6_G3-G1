@@ -13,6 +13,7 @@ public class _2_HomePage extends _1_BasePage {
     public static By searchButton = By.id("nav-search-submit-button");
     public static By accountPage = By.xpath("//a[@href='https://www.amazon.eg/-/en/gp/css/homepage.html?ref_=nav_youraccount_btn']");
     public static By cartLocator = By.xpath("//span[@id='nav-cart-count']");
+    public static By LanguageButton = By.xpath("(//div[contains(text(),'EN')])[1]");
 
     public static boolean isAccountLinkVisible() {
         return driver.findElement(accountLink).isDisplayed();
@@ -50,4 +51,12 @@ public class _2_HomePage extends _1_BasePage {
         return new _11_CartPage();
 
     }
+}
+
+public static _13_LanguagePage openLanguagePage() {
+    click(LanguageButton);
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("")));
+    return new _13_LanguagePage();
+
 }
