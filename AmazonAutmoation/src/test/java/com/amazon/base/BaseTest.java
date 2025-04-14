@@ -1,5 +1,6 @@
 package com.amazon.base;
 
+import com.amazon.data.DataBase;
 import com.amazon.pages._1_BasePage;
 import com.amazon.pages._2_HomePage;
 import org.openqa.selenium.WebDriver;
@@ -11,20 +12,18 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     //important in Before/after Class
+    private static DataBase myData=DataBase.startDataBase();
 
     //
-    private String mailBody="depi.selenium";
-    private String mail_To_Register = mailBody+"@qa.team"; //depi.selenium@qa.team
 
     protected static WebDriver driver;
 //    public static String url = _1_BasePage.getUrl("any");
-    private static String url = "https://www.amazon.eg/?language=en_AE";
 
     @BeforeClass
     public static void setUp(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(url); //open the driver to this URL
+        driver.get(myData.url); //open the driver to this URL
         _1_BasePage.setDriver(driver);
     }
 
