@@ -1,11 +1,13 @@
 package com.amazon.tests.account;
 
 import com.amazon.base.BaseTest;
+import com.amazon.data.DataBase;
 import com.amazon.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AccountTest extends BaseTest {
+
 
     @Test
     public void testOpenAccountPage() {
