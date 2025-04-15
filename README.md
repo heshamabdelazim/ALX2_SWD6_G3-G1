@@ -56,7 +56,6 @@ AmazonAutomation/
 │               ├── TC_2_OpenWishlist.java
 │               ├── TC_3_UndoRemoveProductFromList.java
 │               └── TC_4_RemoveProductFromList.java
-│
 ```
 # ✅ TestNG Suite Configuration
 The tests are grouped and managed through the testng.xml file as shown below:
