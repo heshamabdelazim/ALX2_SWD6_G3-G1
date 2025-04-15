@@ -16,6 +16,7 @@ public class _1_BasePage {
 
     protected static WebElement find(By locator) {
         return driver.findElement(locator);
+
     }
 
     protected static void set(By locator, String text) {

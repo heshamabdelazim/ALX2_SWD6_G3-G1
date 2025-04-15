@@ -2,12 +2,12 @@ package com.amazon.base;
 
 import com.amazon.data.DataBase;
 import com.amazon.pages._1_BasePage;
-import com.amazon.pages._2_HomePage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
@@ -21,7 +21,9 @@ public class BaseTest {
 
     @BeforeClass
     public static void setUp(){
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        System.setProperty("java.util.logging.config.file", "src/main/resources/logging.properties");
         driver.manage().window().maximize();
         driver.get(myData.url); //open the driver to this URL
         _1_BasePage.setDriver(driver);
