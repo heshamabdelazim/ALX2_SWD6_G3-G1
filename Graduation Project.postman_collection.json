@@ -1,0 +1,564 @@
+{
+	"info": {
+		"_postman_id": "af2f4708-682a-439d-8592-2819d2ba837c",
+		"name": "Graduation Project",
+		"description": "This API allows you to reserve a book.\n\nThe API is available at [https://simple-books-api.glitch.me](https://simple-books-api.glitch.me)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40843526",
+		"_collection_link": "https://www.postman.com/depi99/alx2-swd6-g3-g1/collection/3ptdyxq/graduation-project?action=share&source=collection_link&creator=40843526"
+	},
+	"item": [
+		{
+			"name": "Simple Books API",
+			"item": [
+				{
+					"name": "Status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//checking reponse status code 200\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "currency=USD; OCSESSID=a5243d7daf4c7056b545764e59; _gid=GA1.2.1558620121.1743623348; _ga_CY855R5Z98=GS1.1.1743623407.1.0.1743623413.0.0.0; _gcl_au=1.1.1748033364.1743111611.1766852151.1743624904.1743624904; _ga_GNHMG3034P=GS1.2.1743623348.1.1.1743625103.0.0.0; _ga=GA1.2.1364419495.1743111612; _ga_X8G0BRFSDF=GS1.1.1743623431.4.1.1743625847.0.0.0; cf_clearance=tbTMGJ.vu4a.Q5O4TAVa_xextESLp9cUiDE0pmpV7SM-1743626373-1.2.1.1-d9IgVW8eNR5r67TGqGZ8X5zxAFLstQ7PiT2sgIIV4oAvAJEhGwbaC15xWA4KUl81GwwvNBokWMhyjFQfScrWor9YbKdjGy0qSTl.9phS.UVzaGx.BAf1UyoqhuqTJ7spTQBG.iObXx3SBV3Pswdvh2S5gYWdow2fr5vhzV5d.u0ufszl2cdBcrDxkYtqVNAtgn51Susy1D5obzQAdC2Sw0Z99Z21nflFuw2Sq2zvmLM4W1d4s7l_97qv2fW56DoEiD1VDcTHm98Lyx1KqqlVIpY_fT2M6z7zkJpf5293Fi9CD5XKkGNGh1kXEePYvhAkaM0pOAP97.6go6p6vZrNpSUBfVCME2evtuc8fLMmr.uzc7i2FttfHGyIuLPUcgYt",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Mobile Safari/537.36",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/status",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"status"
+							]
+						},
+						"description": "GET `/status`\n\nReturns the status of the API."
+					},
+					"response": []
+				},
+				{
+					"name": "List of books",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"//checking multiple books to exist\r",
+									"pm.test(\"'The Russian book' exists\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"The Russian\");\r",
+									"});\r",
+									"pm.test(\"'Just as I Am' book exists\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Just as I Am\");\r",
+									"});\r",
+									"\r",
+									"const response = pm.response.json(); \r",
+									"//checking if id is a number and response is an array.\r",
+									"pm.test(\"Id datatype is a number\", function () {\r",
+									"    for (let i = 0; i < response.length; i++) {\r",
+									"        console.log(\"ID at index\", i, \":\", response[i].id);\r",
+									"        pm.expect(typeof response[i].id).to.eql(\"number\");\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"All keys are not null\", function () {\r",
+									"    const response = pm.response.json();\r",
+									"    for (let i = 0; i < response.length; i++) {\r",
+									"        pm.expect(response[i].id).to.not.eql(null);\r",
+									"        pm.expect(response[i].type).to.not.eql(null);\r",
+									"        pm.expect(response[i].available).to.not.eql(null);\r",
+									"        pm.expect(response[i].name).to.not.eql(null);\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response is an array\", function () {\r",
+									"    pm.expect(Array.isArray(response)).to.be.true;\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "currency=USD; OCSESSID=a5243d7daf4c7056b545764e59; _gid=GA1.2.1558620121.1743623348; _ga_CY855R5Z98=GS1.1.1743623407.1.0.1743623413.0.0.0; _gcl_au=1.1.1748033364.1743111611.1766852151.1743624904.1743624904; _ga_GNHMG3034P=GS1.2.1743623348.1.1.1743625103.0.0.0; _ga=GA1.2.1364419495.1743111612; _ga_X8G0BRFSDF=GS1.1.1743623431.4.1.1743625847.0.0.0; cf_clearance=tbTMGJ.vu4a.Q5O4TAVa_xextESLp9cUiDE0pmpV7SM-1743626373-1.2.1.1-d9IgVW8eNR5r67TGqGZ8X5zxAFLstQ7PiT2sgIIV4oAvAJEhGwbaC15xWA4KUl81GwwvNBokWMhyjFQfScrWor9YbKdjGy0qSTl.9phS.UVzaGx.BAf1UyoqhuqTJ7spTQBG.iObXx3SBV3Pswdvh2S5gYWdow2fr5vhzV5d.u0ufszl2cdBcrDxkYtqVNAtgn51Susy1D5obzQAdC2Sw0Z99Z21nflFuw2Sq2zvmLM4W1d4s7l_97qv2fW56DoEiD1VDcTHm98Lyx1KqqlVIpY_fT2M6z7zkJpf5293Fi9CD5XKkGNGh1kXEePYvhAkaM0pOAP97.6go6p6vZrNpSUBfVCME2evtuc8fLMmr.uzc7i2FttfHGyIuLPUcgYt",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Mobile Safari/537.36",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/books",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"books"
+							]
+						},
+						"description": "GET /books\n\nReturns a list of books.\n\nOptional query parameters:\n\ntype: fiction or non-fiction  \nlimit: a number between 1 and 20."
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single book",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"//checking if the endpoint book is correct\r",
+									"pm.test(\"The book is 'Viscount Who Loved Me'\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Viscount Who Loved Me\");\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "currency=USD; OCSESSID=a5243d7daf4c7056b545764e59; _gid=GA1.2.1558620121.1743623348; _ga_CY855R5Z98=GS1.1.1743623407.1.0.1743623413.0.0.0; _gcl_au=1.1.1748033364.1743111611.1766852151.1743624904.1743624904; _ga_GNHMG3034P=GS1.2.1743623348.1.1.1743625103.0.0.0; _ga=GA1.2.1364419495.1743111612; _ga_X8G0BRFSDF=GS1.1.1743623431.4.1.1743625847.0.0.0; cf_clearance=tbTMGJ.vu4a.Q5O4TAVa_xextESLp9cUiDE0pmpV7SM-1743626373-1.2.1.1-d9IgVW8eNR5r67TGqGZ8X5zxAFLstQ7PiT2sgIIV4oAvAJEhGwbaC15xWA4KUl81GwwvNBokWMhyjFQfScrWor9YbKdjGy0qSTl.9phS.UVzaGx.BAf1UyoqhuqTJ7spTQBG.iObXx3SBV3Pswdvh2S5gYWdow2fr5vhzV5d.u0ufszl2cdBcrDxkYtqVNAtgn51Susy1D5obzQAdC2Sw0Z99Z21nflFuw2Sq2zvmLM4W1d4s7l_97qv2fW56DoEiD1VDcTHm98Lyx1KqqlVIpY_fT2M6z7zkJpf5293Fi9CD5XKkGNGh1kXEePYvhAkaM0pOAP97.6go6p6vZrNpSUBfVCME2evtuc8fLMmr.uzc7i2FttfHGyIuLPUcgYt",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Mobile Safari/537.36",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{BaseURL}}/books/6",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"books",
+								"6"
+							]
+						},
+						"description": "Retrieve detailed information about a book."
+					},
+					"response": []
+				},
+				{
+					"name": "API Client",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//checking reponse status code either 201 or 409\r",
+									"pm.test(\"Status code is 201 or 409\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 409]);\r",
+									"});\r",
+									"\r",
+									"//handling 201 or 409 response\r",
+									"pm.test(\"Handle 201 or 409 response\", function () {\r",
+									"    if (pm.response.code === 409) {\r",
+									"        pm.expect(pm.response.code).to.eql(409); // test passes\r",
+									"    } else if (pm.response.code === 201) {\r",
+									"        //setting token from response to env\r",
+									"        let response = pm.response.json();\r",
+									"        pm.environment.set(\"Token\", response.accessToken);\r",
+									"        pm.expect(pm.response.code).to.eql(201); // test passes\r",
+									"    } else {\r",
+									"        // fail the test for any unexpected status\r",
+									"        pm.expect.fail(`Unexpected status code: ${pm.response.code}`);\r",
+									"    }\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "// sending body params to register\r\n{\r\n   \"clientName\": \"{{clientName}}\",\r\n   \"clientEmail\": \"{{clientEmail}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/api-clients/",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"api-clients",
+								""
+							]
+						},
+						"description": "To submit or view an order, you need to register your API client.\n\nPOST `/api-clients/`\n\nThe request body needs to be in JSON format and include the following properties:\n\n- `clientName` - String\n    \n- `clientEmail` - String\n    \n\nThe response body will contain the access token. The access token is valid for 7 days.\n\nPossible errors\n\nStatus code 409 - \"API client already registered.\" Try changing the values for clientEmail and clientName to something else."
+					},
+					"response": []
+				},
+				{
+					"name": "Submit an order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//checking reponse status code 201\r",
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"//checking if order created successfully\r",
+									"pm.test(\"Order created successfully\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.created).to.eql(true);\r",
+									"});\r",
+									"\r",
+									"//saving orderId to env variable\r",
+									"let response = pm.response.json();\r",
+									"pm.environment.set(\"CreatedOrder\", response.orderId)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bookId\": 6,\r\n  \"customerName\": \"Khalil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/orders/",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"orders",
+								""
+							]
+						},
+						"description": "POST /orders\n\nAllows you to submit a new order. Requires authentication.\n\nThe request body needs to be in JSON format and include the following properties:\n\nbookId - Integer - Required  \ncustomerName - String - Required\n\nThe response body will contain the order Id."
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// getting env var and saving it to a var\r",
+									"let expectedOrderId = pm.environment.get(\"CreatedOrder\")\r",
+									"\r",
+									"//checking if expectedOrderId exists\r",
+									"let response = pm.response.json();\r",
+									"pm.test(\"expectedOrderId exists\", function () {\r",
+									"\tpm.expect(pm.response.text()).to.include(expectedOrderId);\r",
+									"});\r",
+									"\r",
+									"// checking if repsonse body is an array of orders\r",
+									"pm.test(\"Response is an array\", function () {\r",
+									"    pm.expect(Array.isArray(response)).to.be.true;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bookId\": 6,\r\n  \"customerName\": \"Khalil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/orders",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"orders"
+							]
+						},
+						"description": "GET /orders\n\nAllows you to view all orders. Requires authentication."
+					},
+					"response": []
+				},
+				{
+					"name": "Get an order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//looking for a created order if exists\r",
+									"let orderCheck = pm.environment.get(\"CreatedOrder\")\r",
+									"pm.test(\"orderCheck exists\", function () {\r",
+									"\tpm.expect(pm.response.text()).to.include(orderCheck);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bookId\": 6,\r\n  \"customerName\": \"Khalil\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/orders/{{CreatedOrder}}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"orders",
+								"{{CreatedOrder}}"
+							]
+						},
+						"description": "GET /orders/:orderId\n\nAllows you to view an existing order. Requires authentication."
+					},
+					"response": []
+				},
+				{
+					"name": "Update an order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//checking if request is successful\r",
+									"pm.test(\"PATCH request succeeded and customerName was updated\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//updating customerName from \"Ahmed\" to \"Philip\"\r\n{\r\n  \"customerName\": \"Philip\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseURL}}/orders/{{CreatedOrder}}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"orders",
+								"{{CreatedOrder}}"
+							]
+						},
+						"description": "PATCH `/orders/:orderId`\n\nUpdate an existing order. Requires authentication.\n\nThe request body needs to be in JSON format and allows you to update the following properties:\n\n- `customerName` - String"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an order",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//checking if order has been deleted\r",
+									"let deletedId = pm.environment.get(\"CreatedOrder\");\r",
+									"pm.test(`Order with ID ${deletedId} has been deleted`, function () {\r",
+									"    pm.expect(pm.response.code).to.eql(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/orders/{{CreatedOrder}}",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"orders",
+								"{{CreatedOrder}}"
+							]
+						},
+						"description": "DELETE /orders/:orderId\n\nDelete an existing order. Requires authentication.\n\nThe request body needs to be empty."
+					},
+					"response": []
+				}
+			],
+			"description": "## Endpoints for [https://simple-books-api.glitch.me](https://simple-books-api.glitch.me)",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{Token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
