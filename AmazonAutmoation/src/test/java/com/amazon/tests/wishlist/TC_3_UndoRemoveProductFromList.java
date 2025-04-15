@@ -47,6 +47,9 @@ public class TC_3_UndoRemoveProductFromList extends BaseTest {
 
         // Step 12 : Confirm Undo Delete Product
         Assert.assertTrue(WishlistPage.isProductInList(),"Product wasn't re-added");
+
+        test.info("Testing undo remove product from wish list...");
+        test.pass("product re-added to wish list successfully");
     }
 }
 

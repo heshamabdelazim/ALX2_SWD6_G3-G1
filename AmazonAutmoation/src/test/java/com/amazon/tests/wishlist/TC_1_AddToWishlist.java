@@ -48,7 +48,8 @@ public class TC_1_AddToWishlist extends BaseTest {
         // Step 11: Confirm Add to List
         Assert.assertTrue(WishlistConfirmation.isProductAdded(), "Product is not added to Wishlist");
 
-
+        test.info("Testing add product to wish list...");
+        test.pass("product added successfully");
 
     }
 }

@@ -30,6 +30,9 @@ public class TC_2_OpenCart extends BaseTest {
         // Step 6: Confirm Cart Page
         Assert.assertTrue(CartPage.isCartVisible(),"Cart is not visible");
 
+        test.info("Testing opening cart...");
+        test.pass("Cart opened successfully");
+
     }
 }
 

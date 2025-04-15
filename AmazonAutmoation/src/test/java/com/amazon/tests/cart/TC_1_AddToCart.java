@@ -50,6 +50,9 @@ public class TC_1_AddToCart extends BaseTest {
 
         // Step 13: Confirm cart page
         Assert.assertTrue(CartPage.isCartVisible(), "Cart is not visible");
+
+        test.info("Testing add product to cart...");
+        test.pass("product added successfully");
     }
 }
 

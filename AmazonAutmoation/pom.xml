@@ -63,6 +63,13 @@
             <version>2.0.13</version>
         </dependency>
 
+        <!-- ExtentReports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>5.0.9</version> <!-- or latest -->
+        </dependency>
+
 
     </dependencies>
     <build>
