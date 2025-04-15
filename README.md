@@ -1,3 +1,10 @@
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![TestNG](https://img.shields.io/badge/TestNG-Automation-orange)
+![Selenium](https://img.shields.io/badge/Selenium-WebDriver-green)
+![Java](https://img.shields.io/badge/Java-17-blue?logo=java)
+![Maven](https://img.shields.io/badge/Maven-Build%20Tool-red?logo=apachemaven)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
+
 # Amazon Website Automation Project
 
 This project is an automated testing suite for core functionalities of the Amazon website using **TestNG**, **Selenium WebDriver**, and Java. The test cases cover key user journeys including registration, login, wishlist management, cart operations, and basic UI interactions like changing language or store.
