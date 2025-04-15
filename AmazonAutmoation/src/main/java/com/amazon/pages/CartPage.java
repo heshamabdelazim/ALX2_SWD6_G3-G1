@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class _11_CartPage extends _1_BasePage {
+public class CartPage extends BasePage {
 
     public static By shoppingCartTitle = By.xpath("(//h2[normalize-space()='Shopping Cart'])[1]");
     public static By proceedToBuy = By.xpath("(//input[@name='proceedToRetailCheckout'])[1]");
@@ -21,11 +21,11 @@ public class _11_CartPage extends _1_BasePage {
         click(trashIcon);
     }
 
-    public static _12_Checkout openCheckoutPage() {
+    public static Checkout openCheckoutPage() {
         click(proceedToBuy);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//a[normalize-space()='Secure checkout'])[1]")));
-        return new _12_Checkout();
+        return new Checkout();
 
     }
 

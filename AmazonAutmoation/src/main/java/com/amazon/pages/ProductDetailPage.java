@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class _7_ProductDetailPage extends _1_BasePage {
+public class ProductDetailPage extends BasePage {
 
     public static By confirmPDP = By.xpath("//span[@id='productTitle']");
     public static By addToList = By.xpath("//input[@id='add-to-wishlist-button-submit']");
@@ -18,19 +18,19 @@ public class _7_ProductDetailPage extends _1_BasePage {
 
 
 
-    public static _8_WishlistConfirmation openWishConfirmation() {
+    public static WishlistConfirmation openWishConfirmation() {
         click(addToList);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[normalize-space()='View your list']")));
-        return new _8_WishlistConfirmation();
+        return new WishlistConfirmation();
 
     }
 
-    public static _10_AddToCartPage openAddToCartPage() {
+    public static AddToCartPage openAddToCartPage() {
         click(addToCart);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h1[normalize-space()='Added to cart'])[1]")));
-        return new _10_AddToCartPage();
+        return new AddToCartPage();
 
     }
 }

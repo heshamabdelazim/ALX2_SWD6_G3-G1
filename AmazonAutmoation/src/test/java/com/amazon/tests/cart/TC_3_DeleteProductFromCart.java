@@ -1,15 +1,17 @@
-package com.amazon.tests.account;
+package com.amazon.tests.cart;
 
 import com.amazon.base.BaseTest;
-import com.amazon.pages.*;
+import com.amazon.pages.CartPage;
+import com.amazon.pages.HomePage;
+import com.amazon.pages.LoginPage;
+import com.amazon.pages.ContinuePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AccountTest extends BaseTest {
-
+public class TC_3_DeleteProductFromCart extends BaseTest {
 
     @Test
-    public void testOpenAccountPage() {
+    public void testDeleteProduct() {
 
         // Step 1: Click Sign-in
         HomePage.signinLink();
@@ -25,13 +27,14 @@ public class AccountTest extends BaseTest {
         // Step 4: Confirm login success
         Assert.assertTrue(HomePage.isAccountLinkVisible(), "Login failed: Account link not visible.");
 
-        // Step 5: Click account link
-        HomePage.openAccountPage();
+        // Step 5: Click Cart on the header
+        HomePage.openCartPage();
 
-        // Step 6: Confirm account page
-        AccountPage.isYourAccountVisible();
+        // Step 6: Confirm Cart Page
+        Assert.assertTrue(CartPage.isCartVisible(),"Cart is not visible");
 
-
+        // Step 7: Delete product from cart
+        CartPage.deleteProduct();
 
     }
 }

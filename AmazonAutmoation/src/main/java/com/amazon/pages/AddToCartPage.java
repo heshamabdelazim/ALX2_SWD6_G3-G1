@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class _10_AddToCartPage extends _1_BasePage {
+public class AddToCartPage extends BasePage {
 
 
     public static By goToCart = By.xpath("(//a[@href='/-/en/cart?ref_=sw_gtc'])[1]");
@@ -17,11 +17,11 @@ public class _10_AddToCartPage extends _1_BasePage {
         return driver.findElement(addedToCart).isDisplayed();
     }
 
-    public static _11_CartPage openCartPage() {
+    public static CartPage openCartPage() {
         click(goToCart);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h2[normalize-space()='Shopping Cart'])[1]")));
-        return new _11_CartPage();
+        return new CartPage();
 
     }
 

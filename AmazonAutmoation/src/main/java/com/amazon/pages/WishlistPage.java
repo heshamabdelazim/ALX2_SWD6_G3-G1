@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class _9_WishlistPage extends _1_BasePage {
+public class WishlistPage extends BasePage {
 
     public static By yourListConfirm = By.xpath("//a[@href='/-/en/hz/wishlist/ls/ref=cm_wl_your_lists']");
     public static By deleteButton = By.xpath("//input[@name='submit.deleteItem']");

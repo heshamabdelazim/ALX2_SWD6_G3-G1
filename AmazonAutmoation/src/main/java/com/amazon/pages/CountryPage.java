@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class _14_CountryPage extends _1_BasePage {
+public class CountryPage extends BasePage {
 
     public static By countryTitle = By.xpath("(//h3[normalize-space()='Website (Country/Region)'])[1]");
     public static By countryButton = By.xpath("(//span[@class='a-dropdown-prompt'])[1]");

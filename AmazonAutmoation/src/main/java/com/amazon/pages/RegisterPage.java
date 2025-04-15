@@ -2,7 +2,7 @@ package com.amazon.pages;
 
 import org.openqa.selenium.By;
 
-public class _3_3_RegisterPage extends _1_BasePage {
+public class RegisterPage extends BasePage {
     static private By nameField = By.cssSelector("#ap_customer_name");
     static private By passField = By.xpath("//input[@id='ap_password']");
     static private By rePassField = By.xpath("//input[@id='ap_password_check']");

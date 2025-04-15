@@ -5,7 +5,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-public class _2_HomePage extends _1_BasePage {
+public class HomePage extends BasePage {
 
     private static By signinLink = By.id("nav-link-accountList-nav-line-1");
     public static By accountLink = By.id("nav-link-accountList");
@@ -25,52 +25,52 @@ public class _2_HomePage extends _1_BasePage {
         return driver.findElement(arabicCartTitle).isDisplayed();
     }
 
-    public static _3_1_LoginPage signinLink() {
-        _1_BasePage.click(signinLink);
-        return new _3_1_LoginPage();
+    public static LoginPage signinLink() {
+        BasePage.click(signinLink);
+        return new LoginPage();
     }
 
     public static void setSearch(String search) {
         set(searchField, search);
     }
 
-    public static _6_ProductsListingPage openProductsListing() {
+    public static ProductsListingPage openProductsListing() {
         click(searchButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@class='a-dropdown-prompt'])[1]")));
-        return new _6_ProductsListingPage();
+        return new ProductsListingPage();
 
     }
 
-    public static _5_AccountPage openAccountPage() {
+    public static AccountPage openAccountPage() {
         click(accountPage);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h1[normalize-space()='Your Account']")));
-        return new _5_AccountPage();
+        return new AccountPage();
 
     }
 
-    public static _11_CartPage openCartPage() {
+    public static CartPage openCartPage() {
         click(cartLocator);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h2[normalize-space()='Shopping Cart'])[1]")));
-        return new _11_CartPage();
+        return new CartPage();
 
     }
 
-    public static _13_LanguagePage openLanguagePage() {
+    public static LanguagePage openLanguagePage() {
         click(languageButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h3[normalize-space()='Language Settings'])[1]")));
-        return new _13_LanguagePage();
+        return new LanguagePage();
 
     }
 
-    public static _14_CountryPage openCountryPage() {
+    public static CountryPage openCountryPage() {
         click(countryButton);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//h3[normalize-space()='Website (Country/Region)'])[1]")));
-        return new _14_CountryPage();
+        return new CountryPage();
 
     }
 }

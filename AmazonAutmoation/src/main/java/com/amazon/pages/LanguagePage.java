@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 
-public class _13_LanguagePage extends _1_BasePage {
+public class LanguagePage extends BasePage {
 
     public static By languageTitle = By.xpath("(//h3[normalize-space()='Language Settings'])[1]");
     public static By arabicRadiobutton = By.xpath("(//i[@class='a-icon a-icon-radio'])[1]");

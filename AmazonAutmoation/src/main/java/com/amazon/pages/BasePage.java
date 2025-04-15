@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
-public class _1_BasePage {
+public class BasePage {
 
     public static WebDriver driver;
 
     public static void setDriver(WebDriver driver) {
-        _1_BasePage.driver = driver;
+        BasePage.driver = driver;
     }
 
     protected static WebElement find(By locator) {
