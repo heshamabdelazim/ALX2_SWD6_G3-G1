@@ -9,7 +9,7 @@ public class _3_1_LoginPage extends _1_BasePage {
 
     private static By usernameField = By.id("ap_email_login");
     private static By continueButton = By.id("continue");
-    private static By createButton = By.id("createAccountSubmit");
+    private static By createButton = By.xpath("//input[@type='submit']");
 
 
 
@@ -23,8 +23,10 @@ public class _3_1_LoginPage extends _1_BasePage {
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ap_password")));
         return new _4_ContinuePage();
     }
+
+
     public static _3_2_RegisterPage clickRegister(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         click(createButton);
         return new _3_2_RegisterPage();
     }
