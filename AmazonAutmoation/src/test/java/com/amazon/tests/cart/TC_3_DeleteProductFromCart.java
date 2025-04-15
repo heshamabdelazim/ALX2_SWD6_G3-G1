@@ -36,6 +36,9 @@ public class TC_3_DeleteProductFromCart extends BaseTest {
         // Step 7: Delete product from cart
         CartPage.deleteProduct();
 
+        test.info("Testing deleting product from cart...");
+        test.pass("Product deleted successfully from cart");
+
     }
 }
 

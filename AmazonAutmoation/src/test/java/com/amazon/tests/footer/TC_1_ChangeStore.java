@@ -29,6 +29,9 @@ public class TC_1_ChangeStore extends BaseTest {
         CountryPage.clickSubmitButton();
         wait(2);
 
+        test.info("Testing changing store location...");
+        test.pass("Store location changed successfully");
+
     }
 }
 

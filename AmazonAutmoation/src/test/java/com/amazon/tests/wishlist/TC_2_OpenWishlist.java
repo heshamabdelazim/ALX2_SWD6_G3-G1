@@ -36,6 +36,9 @@ public class TC_2_OpenWishlist extends BaseTest {
         // Step 8 : Confirm wishlist page
         Assert.assertTrue(WishlistPage.isWishlistPageVisible(), "Wishlist not visible");
 
+        test.info("Testing opening to wish list...");
+        test.pass("Wish list opened successfully");
+
     }
 }
 

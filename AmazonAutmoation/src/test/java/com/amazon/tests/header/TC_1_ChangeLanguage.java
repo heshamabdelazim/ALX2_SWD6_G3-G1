@@ -30,6 +30,9 @@ public class TC_1_ChangeLanguage extends BaseTest {
         Assert.assertTrue(HomePage.isArabicCartTitleVisible(), "Language is not arabic");
         wait(1);
 
+        test.info("Testing changing store language...");
+        test.pass("Store language changed successfully");
+
     }
 }
 

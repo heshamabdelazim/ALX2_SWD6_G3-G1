@@ -41,6 +41,9 @@ public class TC_4_RemoveProductFromList extends BaseTest {
 
         // Step 10 : Confirm Deletion
         Assert.assertTrue(WishlistPage.isProductDeleted(), "Product not deleted");
+
+        test.info("Testing deleting product from wish list...");
+        test.pass("product deleted from wish list successfully");
     }
 }
 
